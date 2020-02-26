@@ -11,6 +11,7 @@ The implementation of our [2018 CVMP DeepCalib](https://drive.google.com/file/d/
 - [Notes](#notes)
   - [Different architectures](#different-architectures)
   - [Weights](#weights)
+  - [Undistortion](#undistortion)
 - [Citation](#citation)
 
 ## Short description
@@ -39,6 +40,9 @@ For detailed information refer to the `Section 4.2` of [our paper](https://drive
 
 #### Weights
 The weights for our networks can be found [here](https://drive.google.com/file/d/1TYZn-f2z7O0hp_IZnNfZ06ExgU9ii70T/view). We recommend to use `SingleNet` since we experimentally confirmed it outperforms the other ones. The regression weights for `SeqNet` are currently unavailable, although you can train your own.
+
+#### Undistortion
+One way to qualitatively assess the accuracy of predicted parameters is to use those to undistort images that were used to predict the parameters. [Undistoriton](https://github.com/alexvbogdan/DeepCalib/tree/master/undistortion) folder contains MATLAB code to undistort multiple images from .txt file. The format of the .txt file is the following: 1st column contains `path to the image`, 2nd column is `focal length`, 3rd column `distortion parameter`. Each row corresponds to a single image. With a simple modification you can use it on single image by giving direct path to it and predicted parameters.
 
 ## Citation
 ```
