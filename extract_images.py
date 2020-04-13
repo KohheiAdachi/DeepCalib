@@ -17,7 +17,7 @@ def video_to_frames(video_filename):
     while i <= n_frames:
         ret, frame = source_video.read()
         if ret:
-            cv2.imwrite(SAVE_PATH + "frame_" + str(f) + ".jpg", frame)
+            cv2.imwrite(SAVE_PATH + "frame_" + str(i) + ".jpg", frame)
         else:
             i += 1
             continue
