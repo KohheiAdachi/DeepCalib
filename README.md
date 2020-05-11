@@ -21,6 +21,7 @@ We present a novel fully automatic deep learning-based approach works with a sin
 - Python 2.7
 - Keras 2.1
 - TensorFlow 1.4
+- OpenCV 3.2.1
 
 ## Dataset generation
 We provided the code for the whole data generation pipeline. First you have to download sun360 dataset using this [download script](https://github.com/alexvbogdan/DeepCalib/blob/master/dataset/download_images.py). Then, you have to choose whether your dataset is going to have continuous or discrete values. We provide the dataset generation code for both in a dataset [folder](https://github.com/alexvbogdan/DeepCalib/blob/master/dataset/). If you are using this code, please do not forget to [cite](https://scholar.google.co.kr/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=recognizing+scene+viewpoint+using+panoramic+place+representation&btnG=#d=gs_cit&u=%2Fscholar%3Fq%3Dinfo%3ARJsOQOkTaMEJ%3Ascholar.google.com%2F%26output%3Dcite%26scirp%3D0%26hl%3Den) the paper describing sun360 dataset.
