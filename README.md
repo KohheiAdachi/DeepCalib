@@ -1,5 +1,5 @@
 # DeepCalib
-The implementation of our [2018 CVMP DeepCalib](https://drive.google.com/file/d/1pZgR3wNS6Mvb87W0ixOHmEVV6tcI8d50/view) paper. 
+The implementation of our [2018 CVMP DeepCalib](https://drive.google.com/file/d/1pZgR3wNS6Mvb87W0ixOHmEVV6tcI8d50/view) paper. The supplementary material can be found [here](https://drive.google.com/file/d/1baNhjaYxadjHbMn1huVjsrSJRGSmzFWF/view).
 
 ## Table of contents
 
