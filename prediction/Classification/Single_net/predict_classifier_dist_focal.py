@@ -9,12 +9,12 @@ from keras import optimizers
 import numpy as np
 import glob, os
 import tensorflow as tf
-from keras.backend.tensorflow_backend import set_session
+# from keras.backend.tensorflow_backend import set_session
 
 results_path = ""
 IMAGE_FILE_PATH_DISTORTED = ""
 
-path_to_weights = 'weights_06_5.61.h5'
+path_to_weights = 'weights/Classification/Single_net/weights_06_5.61.h5'
 
 filename_results = results_path + 'airport.txt'
 
@@ -45,9 +45,9 @@ with tf.device('/gpu:0'):
 
     layer_index = 0
     for layer in phi_model.layers:
-        layer.name = layer.name + "_phi"
+        layer._name = layer._name + "_phi"
 
-    model = Model(input=main_input, output=[final_output_focal, final_output_distortion])
+    model = Model(main_input,[final_output_focal, final_output_distortion])
     model.load_weights(path_to_weights)
 
     n_acc_focal = 0
@@ -57,7 +57,7 @@ with tf.device('/gpu:0'):
     file = open(filename_results, 'a')
    
     #input image
-    image = cv2.imread('')
+    image = cv2.imread('IMG_8044.jpeg')
    
     image = cv2.resize(image, (299, 299))
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -73,6 +73,7 @@ with tf.device('/gpu:0'):
     # loop
     prediction_focal = model.predict(image)[0]
     prediction_dist = model.predict(image)[1]
+    print(prediction_focal)
     n_acc_focal += classes_focal[np.argmax(prediction_focal[0])]
     n_acc_dist += classes_distortion[np.argmax(prediction_dist[0])]
 
